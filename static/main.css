@@ -1,0 +1,46 @@
+.container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background: DarkOrange;
+    color: black;
+    overflow: hidden;
+    text-align: center;
+}
+
+table#center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    color: black;
+    margin-top: 30px;
+}
+
+.container h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: black;
+    font: medium;
+}
+
+.container button {
+    width: 70px;
+    height: 30px;
+    background-color: DodgerBlue;
+    margin: 3px;
+}
+
+.container button#process_entry {
+    width: 70px;
+    height: 60px;
+    background-color: DodgerBlue;
+    margin: 3px;
+}
+
+form {
+    alignment: center;
+}
