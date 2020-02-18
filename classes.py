@@ -18,8 +18,8 @@ class Strava():
                 print(clientid)
         except:
             s3 = S3Connection(os.environ['client_id'], os.environ['client_secret'])
-        self.access_token = self.client.exchange_code_for_token(client_id=clientid[0],
-                                                                client_secret=clientid[1],
+        self.access_token = self.client.exchange_code_for_token(client_id=os.environ['client_id'],
+                                                                client_secret=os.environ['client_secret'],
                                                                 code=self.code)
         self.access_token = self.access_token['access_token']
         self.client = Client(access_token=self.access_token)
