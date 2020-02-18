@@ -12,12 +12,7 @@ class Strava():
 
     def get_access_token(self, code):
         self.code = code
-        try:
-            with open("secrets.txt", 'r') as f:
-                clientid = f.readlines()
-                print(clientid)
-        except:
-            s3 = S3Connection(os.environ['client_id'], os.environ['client_secret'])
+        s3 = S3Connection(os.environ['client_id'], os.environ['client_secret'])
         self.access_token = self.client.exchange_code_for_token(client_id=os.environ['client_id'],
                                                                 client_secret=os.environ['client_secret'],
                                                                 code=self.code)
