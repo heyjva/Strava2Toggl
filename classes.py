@@ -2,7 +2,7 @@ from stravalib import Client
 from datetime import datetime, timedelta
 from toggl.TogglPy import Toggl
 from boto.s3.connection import S3Connection
-import osgit
+import os
 
 class Strava():
 
