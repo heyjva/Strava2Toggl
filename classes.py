@@ -8,7 +8,7 @@ class Strava():
     def __init__(self):
         self.client = Client()
         self.url = self.client.authorization_url(client_id=41952,
-                                                 redirect_uri='http://127.0.0.1:5000/authorization')
+                                                 redirect_uri='https://strava2toggl.herokuapp.com/authorization')
 
     def get_access_token(self, code):
         self.code = code
