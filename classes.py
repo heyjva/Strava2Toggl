@@ -1,6 +1,7 @@
 from stravalib import Client
 from datetime import datetime, timedelta
 from toggl.TogglPy import Toggl
+from boto.s3.connection import S3Connection
 
 class Strava():
 
@@ -11,9 +12,12 @@ class Strava():
 
     def get_access_token(self, code):
         self.code = code
-        with open("secrets.txt", 'r') as f:
-            clientid = f.readlines()
-            print(clientid)
+        try:
+            with open("secrets.txt", 'r') as f:
+                clientid = f.readlines()
+                print(clientid)
+        except:
+            s3 = S3Connection(os.environ['client_id'], os.environ['client_secret'])
         self.access_token = self.client.exchange_code_for_token(client_id=clientid[0],
                                                                 client_secret=clientid[1],
                                                                 code=self.code)
